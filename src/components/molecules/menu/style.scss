@@ -1,0 +1,70 @@
+.menu{
+    background-color: #383D40;
+    height: 100vh;
+    transition: .5s ;
+    transition-property: width;
+    width: 60px;
+    overflow: hidden;
+    &__arrow{
+        margin: auto;
+        width: 14px;
+        font-size: 20px;
+        margin-bottom: 20px;
+        padding-top: 20px;
+        overflow: hidden;
+        &--active{
+            color: white;
+        }
+    }
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin-top: 0;
+    }
+    ul:first-child{
+        padding-top: 10px;
+    }
+    li{
+        width: 20px;
+        padding: 20px;
+        margin: auto;
+        i{
+            font-size: 20px;
+            color: whitesmoke;
+            opacity: 0.5;
+        }
+    }
+}
+.hide{
+    width: 0;
+    height: 0;
+}
+.show{
+    height: auto;
+    width: auto;
+}
+
+.hide-toggle{
+    width: 0;
+    height: 0;
+}
+.show-toggle{
+    height: 30px;
+    width: 30px;
+}
+
+.toggle{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #383D40;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    transition: .5s;
+    transition-property: width;
+}

@@ -11,12 +11,7 @@
     border-radius: 15px;
     padding: 10px;
     margin-top: 40px;
-    button{
-        width: 200px;
-        height: 30px;
-        border: none;
-        background-color: #39D087;
-        border-radius: 10px;
-        margin-top: 10px;
+    @media (min-width: 767px) {
+        position: initial;
     }
 }

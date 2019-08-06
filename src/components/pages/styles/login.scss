@@ -2,11 +2,25 @@
     background-color: #23272C;
     height: 40vh;
     display: flex;
-    border-bottom-left-radius: 190px;
-    border-bottom-right-radius: 190px;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    @media (min-width: 767px) {
+        border-bottom-left-radius: initial;
+        border-bottom-right-radius: initial;
+        display: flex;
+        flex-direction: column;
+        height: 10vh;
+    }
+    &__container{
+        display: block;
+        margin-top: 100px;
+    }
     &__title{
         color: white;
         margin: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+        display: block;
     }
     &__footer{
         position: fixed;

@@ -4,11 +4,7 @@ import UserAndPassWordMolecule from '../molecules/userAndPassword/userAndPaasswo
 export default class LoginOrganism extends React.Component {
     render () {
         return  <>
-            <div className="login">
-                <div className="login__container">
-                    <UserAndPassWordMolecule />
-                </div>
-            </div>
+                <UserAndPassWordMolecule />
         </>
     }
 }
