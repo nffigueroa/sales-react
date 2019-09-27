@@ -2,8 +2,7 @@ import React from 'react';
 import '../styles/login.scss';
 import LoginOrganism from '../../organism/login';
 
-export default class LoginPage extends React.Component {
-    render () {
+const LoginPage = () => {
         return  <>
             <div className="login">
                 <header className="login__title">
@@ -19,5 +18,5 @@ export default class LoginPage extends React.Component {
                 </footer>
             </div>
         </>
-    }
 }
+export default LoginPage;

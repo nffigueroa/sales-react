@@ -10,7 +10,7 @@ import './inputNoBg.scss';
 import React from 'react';
 
 const InputNoBgComponent = (props) => {
-    return ( <input type={props.type} id={props.id} placeholder={props.placeholder} onChange={(e) => props.getResultFromInput(e)} />);
+    return ( <input type={props.type} id={props.id} placeholder={props.placeholder} onChange={(e) => props.getResultFromInput({value: e.target.value, id: e.target.id})} />);
 }
  
 export default InputNoBgComponent;
