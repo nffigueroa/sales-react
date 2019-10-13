@@ -1,8 +1,11 @@
-import { axios } from 'axios';
+import axios from 'axios';
+import { endPoint, PORT } from '../util/const';
 
-export const getUserInfoByID = (ID) => {
-    return axios.post('/user', {
-        ID
+export const loginProcess = (userName, password) => {
+    
+    return axios.post(`${endPoint}:${PORT}/auth`, {
+        userName, 
+        password
     })
 }
 

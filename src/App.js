@@ -13,11 +13,11 @@ const store = createStore(allReducers, {}, window.__REDUX_DEVTOOLS_EXTENSION_COM
 
 function App() {
   return <Provider store={store}>
-    <BrowserRouter>
-      <Route exact path="/" component={LoginPage}/>
-      <Route exact path="/home" component={HomePage}/>
-    </BrowserRouter>
-  </Provider>
+          <BrowserRouter>
+            <Route exact path="/" component={LoginPage}/>
+            <Route exact path="/home" component={HomePage}/>
+          </BrowserRouter>
+        </Provider>
   ;
 }
 

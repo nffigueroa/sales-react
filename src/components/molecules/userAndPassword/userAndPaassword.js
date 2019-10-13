@@ -3,8 +3,9 @@ import React from 'react';
 import './style.scss';
 import BtnGreenButtonAtom from "../../atoms/btn/btnGreen";
 import {connect} from 'react-redux';
-import {AddUser} from '../../../state/actions/user.action';
+import {AddUser, LoginUser} from '../../../state/actions/user.action';
 import { bindActionCreators } from "redux";
+import { loginProcess } from '../../../services/user';
 
 
 class UserAndPassWordMolecule extends React.Component {
@@ -14,17 +15,28 @@ class UserAndPassWordMolecule extends React.Component {
     render() {
         return ( 
             <div className="login-molecule">
-                <InputNoBgComponent id="usuario" placeholder="Usuario" getResultFromInput={this.getResults} />
-                <InputNoBgComponent id="contraseña" placeholder="Contraseña" getResultFromInput={this.getResults}/>
-                <BtnGreenButtonAtom label="Ingresar"/>
+                <InputNoBgComponent id="userName" placeholder="Usuario" getResultFromInput={this.getResults} />
+                <InputNoBgComponent id="password" placeholder="Contraseña" getResultFromInput={this.getResults}/>
+                <BtnGreenButtonAtom listenClick={this.login} label="Ingresar"/>
             </div>
          );
     }
 
-    getResults(val){
-        this.props.AddUser({
-            [val.id] : val.value
+    getResults = (val) => {
+        this.props.LoginUser({
+            userName : val.id === 'userName' ? val.value : this.props.user.userName,
+            password: val.id === 'password' ? val.value : this.props.user.password 
         })
+    }
+
+    login = () => {
+        const {userName, password} = this.props.user;
+        loginProcess(userName, password)
+        .then((response) => {
+            this.props.AddUser(response.data);
+            this.props.history.push('/home');
+        })
+        .catch((e) => {console.log(e)})
     }
 }
 
@@ -32,7 +44,7 @@ const mapStateToProps = (state) => ({
     user: state.user
 })
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({AddUser}, dispatch)
+const mapDispatchToProps = (dispatch) => bindActionCreators({AddUser, LoginUser}, dispatch)
 
  
 export default connect(mapStateToProps, mapDispatchToProps)(UserAndPassWordMolecule);

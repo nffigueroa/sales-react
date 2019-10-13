@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import UserAndPassWordMolecule from '../molecules/userAndPassword/userAndPaassword';
 
-const LoginOrganism = () => {
+const LoginOrganism = (props) => {
     return  <>
-    <UserAndPassWordMolecule />
+    <UserAndPassWordMolecule history={props.history} />
 </> 
 }
 
