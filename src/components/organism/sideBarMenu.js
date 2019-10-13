@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import MenuMolecule from '../molecules/menu/menuList';
 
-const  SidebarOrganism = () => {
+const  SidebarOrganism = (props) => {
     return <>
-        <MenuMolecule />
+        <MenuMolecule history={props.history} />
     </>;
 }
  

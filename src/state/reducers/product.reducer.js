@@ -4,7 +4,10 @@ export const ProductReducer = (state = {}, {type, payload}) => {
     switch (type) {
         case ADD_PRODUCT:
             return {
-                ...state
+                ...state,
+                listProduct: {
+                    ...payload
+                }
             }
         default:
             return state;

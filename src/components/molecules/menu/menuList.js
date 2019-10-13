@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './style.scss';
-const MenuMolecule = () => {
+const MenuMolecule = (props) => {
     const [showMenu, setShowMenu] = useState(true);
     return <>
         <div className={!showMenu ? 'toggle show-toggle' : 'toggle hide-toggle'}>
@@ -11,7 +11,7 @@ const MenuMolecule = () => {
                 <i className="fas fa-angle-left menu__arrow--active" onClick={() => setShowMenu(!showMenu)}></i>
             </div>
             <ul>
-                <li><i className="fas fa-flask"></i></li>
+                <li onClick={props.history.push('/home/product')}><i className="fas fa-clipboard"></i></li>
                 <li><i className="fas fa-users"></i></li>
                 <li><i className="fas fa-book"></i></li>
             </ul>

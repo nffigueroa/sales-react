@@ -11,7 +11,7 @@ const BaseTemplate = (props) => {
         </section>
 
         <section className="sidebar-menu">
-            <SidebarOrganism />
+            <SidebarOrganism history={props.history} />
         </section>
 
         <section className="container-components">

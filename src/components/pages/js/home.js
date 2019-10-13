@@ -7,8 +7,8 @@ class HomePage extends React.Component {
     state = {  }
     render() { 
         return <>
-           <BaseTemplate >
-           <TableOrganism></TableOrganism>
+           <BaseTemplate history={this.props.history} >
+            
            </BaseTemplate>
         </>;
     }
