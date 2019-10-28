@@ -11,7 +11,7 @@ const MenuMolecule = (props) => {
                 <i className="fas fa-angle-left menu__arrow--active" onClick={() => setShowMenu(!showMenu)}></i>
             </div>
             <ul>
-                <li onClick={props.history.push('/home/product')}><i className="fas fa-clipboard"></i></li>
+                <li onClick={() => props.history.push('/home/product')}><i className="fas fa-clipboard"></i></li>
                 <li><i className="fas fa-users"></i></li>
                 <li><i className="fas fa-book"></i></li>
             </ul>

@@ -10,12 +10,12 @@ import {AddProduct} from '../../../state/actions/product.action';
 const ProductsPage = (props) => {
     const idSucursal = props.user.userLogged.userProperties[0].id_sucursal;
     getProductsList(idSucursal).then((res) => {console.log(res)})
-    useEffect(async() => {
-        const productList = await getProductsList(idSucursal);
-        console.log(productList)
-    })
+    useEffect(() => {
+       getProductsList(idSucursal)
+       .then((response) => console.log(response))
+    }, [])
     return <BaseTemplate history={props.history}>
-            <TableOrganism data={getProductsList(idSucursal)}></TableOrganism>
+            <TableOrganism></TableOrganism>
          </BaseTemplate>
 }
 const mapStateToProps = (state) => ({
