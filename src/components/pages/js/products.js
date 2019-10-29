@@ -9,17 +9,26 @@ import {AddProduct} from '../../../state/actions/product.action';
 
 const ProductsPage = (props) => {
     const idSucursal = props.user.userLogged.userProperties[0].id_sucursal;
-    getProductsList(idSucursal).then((res) => {console.log(res)})
+    const labels = [
+        {label: 'Codigo', bd_name: 'id_Produccto'},
+        {label: 'Producto', bd_name: 'nombre_producto'},
+        {label: 'Categoria', bd_name: 'categoria'},
+        {label: 'Medicion', bd_name: 'medicion'},
+        {label: 'Presentacion', bd_name: 'presentacion'},
+        {label: 'Marca', bd_name: 'marca'},
+    ]
     useEffect(() => {
        getProductsList(idSucursal)
-       .then((response) => console.log(response))
+       .then(({data}) => props.AddProduct(data))
     }, [])
+
     return <BaseTemplate history={props.history}>
-            <TableOrganism></TableOrganism>
+        {props.listProduct ? <TableOrganism data={props.listProduct} label={labels}></TableOrganism> : 'Loading'}
          </BaseTemplate>
 }
 const mapStateToProps = (state) => ({
-    user: state.user
+    user: state.user,
+    listProduct: state.product.listProduct
 })
 const mapDispatchToProps = (dispatch) => bindActionCreators({AddProduct}, dispatch)
-export default connect(mapStateToProps)(ProductsPage);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsPage);
