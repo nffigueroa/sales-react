@@ -5,9 +5,8 @@ export const ProductReducer = (state = {}, {type, payload}) => {
         case ADD_PRODUCT:
             return {
                 ...state,
-                listProduct: {
-                    ...payload
-                }
+                listProduct: [payload]
+                
             }
         default:
             return state;
