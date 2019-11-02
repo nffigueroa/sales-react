@@ -1,0 +1,11 @@
+.product-page{
+ overflow: hidden;   
+ background-color: #ffffff;
+ width: 100%;
+ padding: 15px;
+ &__table{
+    border: 1px solid #ddd;
+    padding: 15px;
+    width : calc(100% - 50px);
+ }
+}

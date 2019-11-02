@@ -5,11 +5,10 @@ import ContainerTemplate from './container';
 
 const BaseTemplate = (props) => {
     return <>
+     <header className="header-app">
+         SOFIA Header
+    </header>
         <div className="home-template">
-        <section className="header-app">
-
-        </section>
-
         <section className="sidebar-menu">
             <SidebarOrganism history={props.history} />
         </section>

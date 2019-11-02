@@ -2,12 +2,21 @@
 .home-template{
     width: 100%;
     display: flex;
+    overflow: hidden;
+    
     .sidebar-menu{
     }
     .container-components{
-        width: 80%;
-        background-color: #D5D8DE;
         margin-top: 10%;
+        width: 100%;
+        background-color: #D5D8DE;
         padding: 10px;
+        height: 100vh;
     }
+}
+.header-app{
+    height: 40px;
+    width: 100%;
+    position: absolute;;
+    z-index: -1;
 }

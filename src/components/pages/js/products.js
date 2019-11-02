@@ -7,6 +7,8 @@ import { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import {AddProduct} from '../../../state/actions/product.action';
 
+import '../styles/product.scss';
+
 const ProductsPage = (props) => {
     const idSucursal = props.user.userLogged.userProperties[0].id_sucursal;
     const labels = [
@@ -23,7 +25,18 @@ const ProductsPage = (props) => {
     }, [])
 
     return <BaseTemplate history={props.history}>
-        {props.listProduct ? <TableOrganism data={props.listProduct} label={labels}></TableOrganism> : 'Loading'}
+        <div className="product-page">
+            <div className="product-page__title">
+            <h4 className="product-page__title--normal">
+                PRODUCT
+            </h4>
+            <p>Lista de productos segúng tu surcusal</p>
+            </div>
+            <div className="product-page__table">
+                {props.listProduct ? <TableOrganism data={props.listProduct} label={labels}></TableOrganism> : 'Loading'}
+            </div>
+        </div>
+        
          </BaseTemplate>
 }
 const mapStateToProps = (state) => ({
