@@ -17,10 +17,10 @@ return <>
         </tr>
         </thead>
         <tbody>
-            {props.data[0].map((element, index) => {
+            {props.data.map((element, index) => {
                 return (<tr className="row-table-item" key={index}>
-                        {Object.keys(element).map((item, index) => {
-                            return <td key={index}>{element[Object.keys(element)[index]]}</td>
+                        {props.label.map((item, index) => {
+                            return <td key={index}>{element[item.bd_name]}</td>
                         })}
                     </tr>)
             })}

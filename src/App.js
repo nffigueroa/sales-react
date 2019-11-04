@@ -4,6 +4,7 @@ import './App.css';
 import {BrowserRouter, Route} from 'react-router-dom';
 
 import LoginPage from './components/pages/js/login';
+import Clientpage from './components/pages/js/client';
 import HomePage from './components/pages/js/home';
 import ProductsPage from './components/pages/js/products';
 import { Provider } from 'react-redux';
@@ -18,6 +19,7 @@ function App() {
             <Route exact path="/" component={LoginPage}/>
             <Route exact path="/home" component={HomePage}/>
             <Route exact path="/home/product" component={ProductsPage}/>
+            <Route exact path="/home/client" component={Clientpage}/>
           </BrowserRouter>
         </Provider>
   ;
