@@ -10,18 +10,11 @@ import {AddProduct} from '../../../state/actions/product.action';
 import '../styles/product.scss';
 import ModalTemplate from '../../templates/modal';
 import AddProductForm from '../../templates/form/addProduct';
+import { tableProductConfiguration } from '../../../util/const';
 
 const ProductsPage = (props) => {
     const idSucursal = props.user.userLogged.userProperties[0].id_sucursal;
     const [modal, SetModal] = useState(false);
-    const labels = [
-        {label: 'Codigo', bd_name: 'id_Produccto'},
-        {label: 'Producto', bd_name: 'nombre_producto'},
-        {label: 'Categoria', bd_name: 'categoria'},
-        {label: 'Medicion', bd_name: 'medicion'},
-        {label: 'Presentacion', bd_name: 'presentacion'},
-        {label: 'Marca', bd_name: 'marca'},
-    ]
     useEffect(() => {
        getProductsList(idSucursal)
        .then(({data}) => props.AddProduct(data))
@@ -43,7 +36,7 @@ const ProductsPage = (props) => {
                 <AddProductForm></AddProductForm>
             </ModalTemplate> : ''}
             <div className="product-page__table">
-                {props.listProduct ? <TableOrganism data={props.listProduct} label={labels}></TableOrganism> : 'Loading'}
+                {props.listProduct ? <TableOrganism data={props.listProduct} label={tableProductConfiguration}></TableOrganism> : 'Loading'}
             </div>
         </div>
         

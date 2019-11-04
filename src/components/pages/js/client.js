@@ -8,22 +8,10 @@ import { bindActionCreators } from 'redux';
 import {AddClient} from '../../../state/actions/client.action';
 
 import '../styles/product.scss';
+import { tableClientConfiguration } from '../../../util/const';
 
 const ClientPage = (props) => {
     const idSucursal = props.user.userLogged.userProperties[0].id_sucursal;
-    const labels = [
-        {label: 'Codigo', bd_name: 'id_cliente'},
-        {label: 'Nombre', bd_name: 'nombre_cliente'},
-        {label: 'Apellido', bd_name: 'apellido_cliente'},
-        {label: 'Cedula', bd_name: 'cedula_cliente'},
-        {label: 'Telefono', bd_name: 'telefono_cliente'},
-        {label: 'Direccion', bd_name: 'direccion_cliente'},
-        {label: 'Email', bd_name: 'mail_cliente'},
-        {label: 'Ciudad', bd_name: 'ciudad'},
-        {label: 'Juridico', bd_name: 'EsJuridico'},
-        {label: 'Ciudad', bd_name: 'ciudad'},
-        {label: 'id_ciudad', bd_name: 'id_ciudad'},
-    ]
     useEffect(() => {
         getClientByIdSucursal(idSucursal)
        .then(({data}) => props.AddClient(data))
@@ -38,7 +26,7 @@ const ClientPage = (props) => {
             <p>Lista de clientes segun tu sucursal</p>
             </div>
             <div className="product-page__table">
-                {props.listClient ? <TableOrganism data={props.listClient} label={labels}></TableOrganism> : 'Loading'}
+                {props.listClient ? <TableOrganism data={props.listClient} label={tableClientConfiguration}></TableOrganism> : 'Loading'}
             </div>
         </div>
         
