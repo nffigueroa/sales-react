@@ -44,7 +44,7 @@ const ProductsPage = (props) => {
 }
 const mapStateToProps = (state) => ({
     user: state.user,
-    listProduct: state.product.listProduct
+    listProduct: state.product.listProduct,
 })
 const mapDispatchToProps = (dispatch) => bindActionCreators({AddProduct}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(ProductsPage);

@@ -2,12 +2,14 @@ import React from 'react';
 import DropDownList from '../../atoms/dropdownlist/dropdownList'
 import InputNoBgComponent from '../../atoms/inputNoBg/inputNoBg'
 
-const dropdown = () => {
+const Dropdown = (props) => {
+    const {list, config} = props;
     return(
         <div>
-            <DropDownList></DropDownList>
+            <InputNoBgComponent placeholder={'Categoria'} id={'categoria_input'} type={'text'}></InputNoBgComponent>
+            <DropDownList config={config} list={list} returnValue={(valueReturnedFromDD) => console.log(valueReturnedFromDD)}></DropDownList>
         </div>
     )
 }
 
-export default dropdown;
+export default Dropdown;

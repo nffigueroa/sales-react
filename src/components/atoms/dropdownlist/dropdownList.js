@@ -1,4 +1,5 @@
 import React from 'react';
+import './dropdownList.scss';
 /**
  *  @Params
  *  item : type object
@@ -6,10 +7,11 @@ import React from 'react';
  */
 
 const DropDownList = (props) => {
+    const {config} = props;
     return (
         <div className="dropdown-list">
             {props.list.map((item) => {
-                return <span onClick={() => props.returnValue(item.value)}>{item.label}</span>
+                return <span className="item-dropdown" onClick={() => props.returnValue(item[config.returnValue])}>{item[config.displayName]}</span>
             })}
         </div>
     )
