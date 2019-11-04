@@ -10,8 +10,15 @@ import ProductsPage from './components/pages/js/products';
 import { Provider } from 'react-redux';
 import {createStore} from 'redux';
 import  allReducers  from './state/reducers/index';
+import StateLoader from '../src/util/util';
 
-const store = createStore(allReducers, {}, window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__())
+const stateLoader = new StateLoader();
+
+
+const store = createStore(allReducers, stateLoader.loadState(), window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__())
+store.subscribe(() => {
+  stateLoader.saveState(store.getState());
+});
 
 function App() {
   return <Provider store={store}>

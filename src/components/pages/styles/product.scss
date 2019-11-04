@@ -8,4 +8,20 @@
     padding: 15px;
     width : calc(100% - 50px);
  }
+
+ &__add{
+    background-color: #ddd;
+    width: 30px;
+    height: 30px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    align-content: center;
+    margin-bottom: 10px;;
+    i{
+       height: 20px;
+       margin: auto;
+    }
+ }
 }
