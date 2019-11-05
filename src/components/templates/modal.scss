@@ -26,9 +26,8 @@
         margin: auto;
         margin-top: 40%;
         position: relative;
-        animation-duration: 2s;
-        animation-name: showModalContainer;
         padding: 15px;
+        overflow: scroll;
         &__close{
             border-radius: 10px;
             position: absolute;

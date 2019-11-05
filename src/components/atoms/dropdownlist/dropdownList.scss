@@ -1,12 +1,18 @@
 .dropdown-list{
+    width: 100%;
     display: flex;
     flex-direction: column;
     border: 1px solid #ccc;
     height: 90px;
     overflow: scroll;
-    padding: 15px;
     background-color: #ffffff;
+    position: absolute;
+    z-index: 3;
+    padding-left: 0;
+    padding-right: 0;
     .item-dropdown{
         padding: 10px 0;
+        font-size: 14px;
+        padding: 15px
     }
 }
