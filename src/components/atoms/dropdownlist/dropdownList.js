@@ -10,8 +10,8 @@ const DropDownList = (props) => {
     const {config} = props;
     return (
         <div className="dropdown-list">
-            {props.list.map((item) => {
-                return <span className="item-dropdown" onClick={() => props.returnValue(item[config.returnValue])}>{item[config.displayName]}</span>
+            {props.list.map((item, index) => {
+                return <span key={index} className="item-dropdown" onClick={() => props.returnValue(item)}>{item[config.displayName]}</span>
             })}
         </div>
     )

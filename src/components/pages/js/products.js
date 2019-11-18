@@ -5,7 +5,7 @@ import { getProductsList } from '../../../services/pruduct';
 import {connect} from 'react-redux';
 import { useEffect, useState } from 'react';
 import { bindActionCreators } from 'redux';
-import {AddProduct} from '../../../state/actions/product.action';
+import {ListProduct} from '../../../state/actions/product.action';
 
 import '../styles/product.scss';
 import ModalTemplate from '../../templates/modal';
@@ -17,7 +17,7 @@ const ProductsPage = (props) => {
     const [modal, SetModal] = useState(false);
     useEffect(() => {
        getProductsList(idSucursal)
-       .then(({data}) => props.AddProduct(data))
+       .then(({data}) => props.ListProduct(data))
     }, [])
 
     return <BaseTemplate history={props.history}>
@@ -46,5 +46,5 @@ const mapStateToProps = (state) => ({
     user: state.user,
     listProduct: state.product.listProduct,
 })
-const mapDispatchToProps = (dispatch) => bindActionCreators({AddProduct}, dispatch)
+const mapDispatchToProps = (dispatch) => bindActionCreators({ListProduct}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(ProductsPage);

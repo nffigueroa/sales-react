@@ -21,3 +21,7 @@ export const getMarks = () => {
 export const getPresentations = () => {
     return axios.get(`${endPoint}:${PORT}/other/presentations`);
 }
+
+export const getMeasurements = () => {
+    return axios.get(`${endPoint}:${PORT}/other/measurements`);
+}

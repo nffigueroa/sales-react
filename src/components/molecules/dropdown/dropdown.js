@@ -1,16 +1,20 @@
 import React, {useState} from 'react';
 import DropDownList from '../../atoms/dropdownlist/dropdownList'
-import InputNoBgComponent from '../../atoms/inputNoBg/inputNoBg'
 import './dropdown.scss';
 const Dropdown = (props) => {
     const {list, config, placeholder, id} = props;
     const [showList, setList] = useState(false);
-    const [inputValue, setinputValue] = useState();
+    const [inputValue, setinputValue] = useState('');
     return(
         <div className="dropdown-molecule">
-            <input value={inputValue} className='input-dropdown' onClick={() => setList(!showList)} placeholder={placeholder} id={id} type='text'/>
+            <input className='input-dropdown' defaultValue={inputValue} onClick={() => setList(!showList)} placeholder={placeholder} id={id} type='text' />
             {showList ? 
-            <DropDownList config={config} list={list} returnValue={(valueReturnedFromDD) => setinputValue(valueReturnedFromDD)}></DropDownList>
+            <DropDownList config={config} list={list} returnValue={(valueReturnedFromDD) => {
+                props.returnValue({val: valueReturnedFromDD, field: id});
+                setinputValue(valueReturnedFromDD[config.displayName]);
+                setList(false);
+                return valueReturnedFromDD;
+            }}></DropDownList>
             : ''}
             
         </div>

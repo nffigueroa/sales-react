@@ -7,3 +7,7 @@ import { PORT, endPoint } from '../util/const';
 export const getProductsList = (idSucursal) => {
     return axios.get(`${endPoint}:${PORT}/product/${idSucursal}`);
 }
+
+export const saveProduct = (payload) => {
+    return axios.post(`${endPoint}:${PORT}/product`, payload);
+}

@@ -1,6 +1,7 @@
 export const ADD_CATEGORY = 'ADD_CATEGORY';
 export const ADD_MARK = 'ADD_MARK';
 export const ADD_PRESENTATION = 'ADD_PRESENTATION';
+export const ADD_MEASUREMENT = 'ADD_MEASUREMENT';
 
 export const  AddCategory = (category) => {
     return {
@@ -20,6 +21,13 @@ export const AddPresentation = (presentation) => {
     return {
         type: ADD_PRESENTATION,
         payload: presentation
+    }
+}
+
+export const AddMeasurement = (measurement) => {
+    return {
+        type: ADD_MEASUREMENT,
+        payload: measurement
     }
 }
 

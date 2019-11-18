@@ -1,4 +1,7 @@
 .add-product{
+    fieldset{
+        border: 0;
+    }
     &__title{
         text-align: center;
     }
@@ -11,8 +14,14 @@
             border: 1px solid #e3e3e3;
             border-radius: 4px;
             color: #565656;
-            padding: 8px 12px;
+            padding: 4px 12px;
             height: 40px;
+        }
+        .button-container{
+            margin: auto;
+        }
+        .dd{
+            padding: 15px 0;
         }
     }
 }

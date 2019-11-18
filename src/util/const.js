@@ -30,3 +30,25 @@ export const tableClientConfiguration = [
     {label: 'Ciudad', bd_name: 'ciudad'},
     {label: 'id_ciudad', bd_name: 'id_ciudad'},
 ]
+
+
+/** Dropdown Configurations */
+
+export const dropDowns = {
+    categories: {
+        returnValue: 'id_categoria',
+        displayName: 'categoria'
+    },
+    marks: {
+        returnValue: 'id_marca',
+        displayName: 'marca'
+    },
+    presentations: {
+        returnValue: 'id_presentacion',
+        displayName: 'presentacion'
+    },
+    measurements: {
+        returnValue: 'id_medicion',
+        displayName: 'medicion'
+    }
+}

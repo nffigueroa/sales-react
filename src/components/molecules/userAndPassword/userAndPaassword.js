@@ -17,7 +17,7 @@ class UserAndPassWordMolecule extends React.Component {
             <div className="login-molecule">
                 <InputNoBgComponent id="userName" placeholder="Usuario" getResultFromInput={this.getResults} />
                 <InputNoBgComponent id="password" placeholder="Contraseña" getResultFromInput={this.getResults}/>
-                <BtnGreenButtonAtom listenClick={this.login} label="Ingresar"/>
+                <BtnGreenButtonAtom btnColor={'GREEN'} listenClick={this.login} label="Ingresar"/>
             </div>
          );
     }
