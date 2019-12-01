@@ -1,0 +1,31 @@
+.delete-modal{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    &__title{
+        font-size: 20px;
+    }
+    &__body{
+        margin-top: 50px;
+        font-size: 14px;
+    }
+    .options{
+        display: flex;
+       justify-content: center;
+        &__button{
+            margin: 10px;
+            margin-top: 50px;
+            &:nth-child(1){
+                border: 1px solid #dfdcdc;
+                background-color: #007bff;
+                color: #ffffff;
+                width: 150px;
+            }
+            &:nth-child(2){
+                background-color: #ffffff;
+                border: 1px solid #dfdcdc;
+                width: 150px;
+            }
+        }
+    }
+}

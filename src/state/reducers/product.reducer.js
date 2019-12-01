@@ -1,4 +1,4 @@
-import { LIST_PRODUCT, ADD_PRODUCT } from '../actions/product.action';
+import { LIST_PRODUCT, ADD_PRODUCT, DELETE_PRODUCT } from '../actions/product.action';
 
 export const ProductReducer = (state = {}, {type, payload}) => {
     switch (type) {
@@ -8,7 +8,7 @@ export const ProductReducer = (state = {}, {type, payload}) => {
                 listProduct: payload
                 
             }
-        case ADD_PRODUCT: {
+        case ADD_PRODUCT: 
             return {
                 ...state,
                 form: {
@@ -16,7 +16,11 @@ export const ProductReducer = (state = {}, {type, payload}) => {
                     [payload.field]: payload.val
                 }
             }
-        }
+        case DELETE_PRODUCT:
+            return {
+                ...state,
+                listProduct: [...state.listProduct.filter((item) => item.id_Produccto !== payload)]
+            }
         default:
             return state;
     }

@@ -8,6 +8,10 @@ table{
         background-color: rgb(236, 236, 236);
     }
 }
+.table{
+    overflow: scroll;
+    height: 250px;
+}
 
 .row-table-item{
     padding-bottom: 10px;
@@ -19,13 +23,8 @@ tr {
     td {
         padding: 10px;
         font-family: 'Open Sans';
-        display: none;
         font-size: 14px;
         white-space: pre-line;
-        &:nth-child(2), &:nth-child(3), &:nth-child(4) {
-            display: table-cell;
-        }
-        
     }
     th{
         border-bottom: 2px solid #ddd;
@@ -38,10 +37,6 @@ tr {
         padding: 12px 8px;
         vertical-align: middle;
         border-color: #e3e3e3;
-        display: none;;
-        &:nth-child(2), &:nth-child(3), &:nth-child(4) {
-            display: table-cell;
-        }
     }
 }
 

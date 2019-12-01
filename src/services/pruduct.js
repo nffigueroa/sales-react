@@ -11,3 +11,7 @@ export const getProductsList = (idSucursal) => {
 export const saveProduct = (payload) => {
     return axios.post(`${endPoint}:${PORT}/product`, payload);
 }
+
+export const deleteProduct = (idProducto) => {
+    return axios.delete(`${endPoint}:${PORT}/product/${idProducto}`);
+}

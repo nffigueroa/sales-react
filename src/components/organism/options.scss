@@ -1,0 +1,26 @@
+.option{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin: auto;
+    &__elipsis{
+        transform: rotate(-90deg);
+        line-height: 20px;
+    }
+    .list{
+        z-index: 2;
+        background-color: #ffffff;
+        border: 1px solid gray;
+        padding: 4px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        bottom: -60px;
+        left: -40px;
+        font-size: 12px;
+        &__item{
+            border-bottom: 1px solid gray;
+            padding: 5px;
+        }
+    }
+}

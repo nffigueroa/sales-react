@@ -63,8 +63,9 @@ const AddProductForm = (props)  => {
 }
 export const handleSubmit = (e, props) => {
     e.preventDefault();
-    console.log(props.productForm);
     saveProduct(props.productForm);
+    props.AddProduct(props.productForm);
+    props.formSubmmitted()
 }
 const mapStateToProps = (state) => ({
     user: state.user,
