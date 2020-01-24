@@ -12,6 +12,10 @@ export const saveProduct = (payload) => {
     return axios.post(`${endPoint}:${PORT}/product`, payload);
 }
 
+export const updateProduct = (payload) => {
+    return axios.put(`${endPoint}:${PORT}/product`, payload);
+}
+
 export const deleteProduct = (idProducto) => {
     return axios.delete(`${endPoint}:${PORT}/product/${idProducto}`);
 }

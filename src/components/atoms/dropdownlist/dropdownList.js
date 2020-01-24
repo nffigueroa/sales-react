@@ -7,11 +7,12 @@ import './dropdownList.scss';
  */
 
 const DropDownList = (props) => {
-    const {config} = props;
+    const {displayName} = props;
+    console.log(props)
     return (
         <div className="dropdown-list">
             {props.list.map((item, index) => {
-                return <span key={index} className="item-dropdown" onClick={() => props.returnValue(item)}>{item[config.displayName]}</span>
+                return <span key={index} className="item-dropdown" onClick={() => props.returnValue(item)}>{item[displayName]}</span>
             })}
         </div>
     )

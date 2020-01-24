@@ -13,7 +13,7 @@ return <td >
             <section className="list">
         {
             props.config.map((item) => {
-                return <span className="list__item" onClick={() => item.func(props.itemDisplayed)}>{item.label}</span>
+                return <span className="list__item" onClick={() => {item.func(props.itemDisplayed); setlist(!list)}}>{item.label}</span>
             })
         }
             </section>:

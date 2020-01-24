@@ -52,3 +52,91 @@ export const dropDowns = {
         displayName: 'medicion'
     }
 }
+
+/* Form Configuration AddProduct */
+const inputTypes = {
+    INPUT: 'input',
+    DROPDOWN: 'dropdown'
+}
+export const formConfig = (productValue, 
+                            productMarkValue, 
+                            productCategoryValue, 
+                            productPresentationValue, 
+                            productMeasurementValue, 
+                            func,
+                            productIdValue,
+                            productMarkList,
+                            productCategoryList,
+                            productMeasurementList,
+                            productPresentationList) => {
+    return {
+        funcReturnValue: func,
+        values: [
+        {
+            fieldName: 'id_produccto',
+            typeInput: '',
+            value: productIdValue,
+            key: '',
+            defaultValue: '',
+            id: 'id_produccto',
+            placeholder: ''
+        },
+        {
+            fieldName: 'product_name',
+            typeInput: inputTypes.INPUT,
+            value: productValue,
+            key: '',
+            defaultValue: productValue,
+            id: 'nombre_producto',
+            placeholder: 'Nombre del producto'
+        },
+        {
+            fieldName: 'product_mark',
+            typeInput: inputTypes.DROPDOWN,
+            value: productMarkValue,
+            key: '',
+            defaultValue: productMarkValue,     
+            id: 'marca',
+            placeholder: 'Marca',
+            dropdownList: productMarkList,
+            dropdownReturnValue: dropDowns.marks.returnValue,
+            dropdownConfig: dropDowns.marks
+        },
+        {
+            fieldName: 'product_category',
+            typeInput: inputTypes.DROPDOWN,
+            value: productCategoryValue,
+            key: '',
+            defaultValue: productCategoryValue,     
+            id: 'categoria',
+            placeholder: 'Categoria',
+            dropdownList: productCategoryList,
+            dropdownReturnValue: dropDowns.categories.returnValue,
+            dropdownConfig: dropDowns.categories
+        },
+        {
+            fieldName: 'product_presentation',
+            typeInput: inputTypes.DROPDOWN,
+            value: productPresentationValue,
+            key: '',
+            defaultValue: productPresentationValue,     
+            id: 'presentacion',
+            placeholder: 'Presentación',
+            dropdownList: productPresentationList,
+            dropdownReturnValue: dropDowns.presentations.returnValue,
+            dropdownConfig: dropDowns.presentations
+        },
+        {
+            fieldName: 'product_measurement',
+            typeInput: inputTypes.DROPDOWN,
+            value: productMeasurementValue,
+            key: '',
+            defaultValue: productMeasurementValue,     
+            id: 'medicion',
+            placeholder: 'Medición',
+            dropdownList: productMeasurementList,
+            dropdownReturnValue: dropDowns.measurements.returnValue,
+            dropdownConfig: dropDowns.measurements
+        }
+    ]}
+}
