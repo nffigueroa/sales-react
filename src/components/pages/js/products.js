@@ -18,7 +18,7 @@ import { getCategories, getMarks, getPresentations, getMeasurements } from '../.
 
 
 const ProductsPage = (props) => {
-    const idSucursal = props.user.userLogged.userProperties[0].id_sucursal;
+    const idSucursal = props.user.userLogged.body.userProperties.id_sucursal;
     const [modal, SetModal] = useState(false);
     const [modalDelete, SetModalDelete] = useState(false);
     const [modalUpdate, SetmodalUpdate] = useState(false);
@@ -27,12 +27,12 @@ const ProductsPage = (props) => {
     const [formNewConfig, SetformNewConfig] = useState();
     useEffect(() => {
        getProductsList(idSucursal)
-       .then(({data}) => props.ListProduct(data))
+       .then(({data: {body}}) => props.ListProduct(body))
        getCategories()
-        .then(({data}) => props.AddCategory(data))
-        .then(() =>  getMarks().then(({data}) => props.AddMark(data)) )
-        .then(() =>  getPresentations().then(({data}) => props.AddPresentation(data)))
-        .then(() => getMeasurements().then(({data}) => props.AddMeasurement(data)))
+        .then(({data}) => props.AddCategory(data.body))
+        .then(() =>  getMarks().then(({data}) => props.AddMark(data.body)) )
+        .then(() =>  getPresentations().then(({data}) => props.AddPresentation(data.body)))
+        .then(() => getMeasurements().then(({data}) => props.AddMeasurement(data.body)))
     }, [])
     const modalDeleteFunc = (response) => {
         SetidProducto(response.id_Produccto)
@@ -45,8 +45,8 @@ const ProductsPage = (props) => {
             product_mark: props.mark.filter((item) => item.marca === response.marca)[0].id_marca,
             product_presentation: props.presentation.filter((item) => item.presentacion === response.presentacion)[0].id_presentacion,
             product_measurement: props.measurement.filter((item) => item.medicion === response.medicion)[0].id_medicion,
-            product_creation_user: props.userProperties[0].id_usuario,
-            product_id_sucursal: props.userProperties[0].id_sucursal,
+            product_creation_user: props.userProperties.id_usuario,
+            product_id_sucursal: props.userProperties.id_sucursal,
             product_id_producto: response.id_Produccto
         })
         SetformUpdateConfig(formConfig(response.nombre_producto, 
@@ -65,7 +65,12 @@ const ProductsPage = (props) => {
     const handleDelete = (response) => {
         if (response) {
             deleteProduct(idProducto)
-            props.DeleteProduct(idProducto);
+            .then((response) => {
+                if (response.status === 200) {
+                    props.DeleteProduct(idProducto);
+                }
+            })
+            
         } 
         SetModalDelete(false);
     }
@@ -159,7 +164,7 @@ const ProductsPage = (props) => {
 
 const mapStateToProps = (state) => ({
     user: state.user,
-    userProperties: state.user.userLogged.userProperties,
+    userProperties: state.user.userLogged.body.userProperties,
     listProduct: state.product.listProduct,
     category: state.other.category,
     mark: state.other.mark,

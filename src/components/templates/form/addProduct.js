@@ -26,8 +26,8 @@ const AddProductForm = (props) => {
             </div>
             <form className="add-product__form" onSubmit={(e) => {
                 handleSubmit(e, props);
-                    formConfig.funcReturnValue({ val: props.user.userLogged.userProperties[0].id_usuario, field: 'product_creation_user' });
-                    formConfig.funcReturnValue({ val: props.user.userLogged.userProperties[0].id_sucursal, field: 'product_id_sucursal' });
+                    formConfig.funcReturnValue({ val: props.user.userLogged.body.userProperties.id_usuario, field: 'product_creation_user' });
+                    formConfig.funcReturnValue({ val: props.user.userLogged.body.userProperties.id_sucursal, field: 'product_id_sucursal' });
                 
             }} ref={formRef}>
                 {

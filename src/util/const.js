@@ -6,6 +6,7 @@ export const typeItemTable = {
 
 export const endPoint = 'http://localhost';
 export const  PORT = '3001';
+export const API_VERSION = 'v1';
 
 /** Tables Configuration */
 export const tableProductConfiguration = [
@@ -57,6 +58,80 @@ export const dropDowns = {
 const inputTypes = {
     INPUT: 'input',
     DROPDOWN: 'dropdown'
+}
+
+export const formClient = (clientNameValue, clientLastNameValue, clientPhoneValue, func) => {
+    return {
+        funcReturnValue: func,
+        values: [
+            {
+                fieldName: 'client_name',
+                typeInput: inputTypes.INPUT,
+                value: clientNameValue,
+                key: '',
+                defaultValue: clientNameValue,
+                id: 'nombre',
+                placeholder: 'Nombre'
+            },
+            {
+                fieldName: 'last_name',
+                typeInput: inputTypes.INPUT,
+                value: clientLastNameValue,
+                key: '',
+                defaultValue: clientLastNameValue,
+                id: 'apellido',
+                placeholder: 'Apellido'
+            },
+            {
+                fieldName: 'identification',
+                typeInput: inputTypes.INPUT,
+                value: clientPhoneValue,
+                key: '',
+                defaultValue: clientPhoneValue,
+                id: 'cedula_cliente',
+                placeholder: 'Cedula'
+            },
+            {
+                fieldName: 'phone',
+                typeInput: inputTypes.INPUT,
+                value: clientPhoneValue,
+                key: '',
+                defaultValue: clientPhoneValue,
+                id: 'celular',
+                placeholder: 'Telefono'
+            },
+            {
+                fieldName: 'address',
+                typeInput: inputTypes.INPUT,
+                value: clientPhoneValue,
+                key: '',
+                defaultValue: clientPhoneValue,
+                id: 'direccion',
+                placeholder: 'Direccion'
+            },
+            {
+                fieldName: 'mail',
+                typeInput: inputTypes.INPUT,
+                value: clientPhoneValue,
+                key: '',
+                defaultValue: clientPhoneValue,
+                id: 'correo',
+                placeholder: 'Correo Electronico'
+            },
+            {
+                fieldName: 'city',
+                typeInput: inputTypes.DROPDOWN,
+                value: '',
+                key: '',
+                defaultValue: '',     
+                id: 'ciudad',
+                placeholder: 'Ciudad',
+                dropdownList: '',
+                dropdownReturnValue: '',
+                dropdownConfig: dropDowns.marks
+            },
+        ]
+    }
 }
 export const formConfig = (productValue, 
                             productMarkValue, 

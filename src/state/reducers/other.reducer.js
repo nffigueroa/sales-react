@@ -1,4 +1,4 @@
-import { ADD_CATEGORY, ADD_MARK, ADD_PRESENTATION, ADD_MEASUREMENT } from '../actions/other.action';
+import { ADD_CATEGORY, ADD_MARK, ADD_PRESENTATION, ADD_MEASUREMENT, ADD_CITIES } from '../actions/other.action';
 
 export const OtherReducer = (state = {}, {type, payload}) => {
     switch (type) {
@@ -21,6 +21,11 @@ export const OtherReducer = (state = {}, {type, payload}) => {
             return {
                 ...state,
                 measurement: payload
+            }
+        case ADD_CITIES:
+            return {
+                ...state,
+                cities: payload
             }
         default:
             return state;
