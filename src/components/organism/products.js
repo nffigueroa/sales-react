@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 const ProductsOrganism = () => {
-    return null;
+  return null
 }
- 
-export default ProductsOrganism;
+
+export default ProductsOrganism

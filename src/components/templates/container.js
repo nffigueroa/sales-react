@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
 const ContainerTemplate = (props) => {
-    return <>
-        <div className="container-template">
-            {props.children}
-        </div>
-    </>;
+  return <>
+    <div className='container-template'>
+      {props.children}
+    </div>
+         </>
 }
- 
-export default ContainerTemplate;
+
+export default ContainerTemplate

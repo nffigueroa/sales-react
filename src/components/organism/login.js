@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import UserAndPassWordMolecule from '../molecules/userAndPassword/userAndPaassword';
+import React, { Component } from 'react'
+import UserAndPassWordMolecule from '../molecules/userAndPassword/userAndPaassword'
 
 const LoginOrganism = (props) => {
-    return  <>
+  return <>
     <UserAndPassWordMolecule history={props.history} />
-</> 
+         </>
 }
 
-export default LoginOrganism;
+export default LoginOrganism

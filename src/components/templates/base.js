@@ -1,25 +1,22 @@
-import React from 'react';
-import './base.scss';
-import SidebarOrganism from '../organism/sideBarMenu';
-import ContainerTemplate from './container';
+import React from 'react'
+import './base.scss'
+import SidebarOrganism from '../organism/sideBarMenu'
+import ContainerTemplate from './container'
 
 const BaseTemplate = (props) => {
-    return <>
-     <header className="header-app">
-         SOFIA Header
-    </header>
-        <div className="home-template">
-        <section className="sidebar-menu">
-            <SidebarOrganism history={props.history} />
-        </section>
+  return <>
+    <div className='home-template'>
+      <section className='sidebar-menu'>
+        <SidebarOrganism history={props.history} />
+      </section>
 
-        <section className="container-components">
-            <ContainerTemplate>
-                {props.children}
-            </ContainerTemplate>
-        </section>
-        </div>
-    </>;
+      <section className='container-components'>
+        <ContainerTemplate>
+          {props.children}
+        </ContainerTemplate>
+      </section>
+    </div>
+         </>
 }
- 
-export default BaseTemplate;
+
+export default BaseTemplate
