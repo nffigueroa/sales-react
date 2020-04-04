@@ -1,30 +1,37 @@
 .login{
-    background-color: #23272C;
-    height: 40vh;
     display: flex;
-    border-bottom-left-radius: 40%;
-    border-bottom-right-radius: 40%;
-    @media (min-width: 767px) {
-        border-bottom-left-radius: initial;
-        border-bottom-right-radius: initial;
-        display: flex;
-        flex-direction: column;
-        height: 10vh;
-    }
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(188, 208, 226);
+    
     &__container{
-        display: block;
-        margin-top: 100px;
-    }
-    &__title{
-        color: white;
+        background-color: rgb(255, 255, 255);
         margin: auto;
-        margin-top: 0;
-        margin-bottom: 0;
+        width: 380px;
+        height: 73vh;
+        border: 1px solid lightgray;
+        padding: 60px 50px 30px 60px;
+        -webkit-box-shadow: 1px 6px 40px -11px rgba(138,127,138,1);
+        -moz-box-shadow: 1px 6px 40px -11px rgba(138,127,138,1);
+        box-shadow: 1px 6px 40px -11px rgba(138,127,138,1);
+    }
+    
+    &__title{
+        text-align: center;
+        color: cadetblue;
+        height: 10vh;
+        margin-bottom: 20px;
         display: block;
     }
     &__footer{
         position: fixed;
-        bottom: 10px;
-
+        bottom: -22px;
+        color: rgb(59, 99, 100);
+        width: 100%;
+        height: 10vh;
+        padding-left: 20px;
     }
+    
 }
+
+
