@@ -5,7 +5,7 @@ import {
   getProductsList,
   deleteProduct,
   updateProduct,
-  saveProduct
+  saveProduct,
 } from "../../../services/pruduct";
 import { connect } from "react-redux";
 
@@ -16,13 +16,13 @@ import {
   UpdateForm,
   UpdateProduct,
   UpdateFormOne,
-  AddProduct
+  AddProduct,
 } from "../../../state/actions/product.action";
 import {
   AddMark,
   AddCategory,
   AddPresentation,
-  AddMeasurement
+  AddMeasurement,
 } from "../../../state/actions/other.action";
 
 import "../styles/product.scss";
@@ -31,12 +31,12 @@ import {
   getCategories,
   getMarks,
   getPresentations,
-  getMeasurements
+  getMeasurements,
 } from "../../../services/other";
 
 import ModalsForProduct from "../../templates/modals/ModalsForProduct";
 
-const useCallOtherServices = idSucursal => {
+const useCallOtherServices = (idSucursal) => {
   const [listProduct, setListProduct] = useState();
   const [category, setCategory] = useState();
   const [marks, setMarks] = useState();
@@ -59,8 +59,8 @@ const useCallOtherServices = idSucursal => {
   return [listProduct, category, marks, presentation, measurement];
 };
 
-const ProductsPage = props => {
-  const { id_sucursal: idSucursal } = props.user.userLogged.body.userProperties;
+const ProductsPage = (props) => {
+  const { id_sucursal: idSucursal } = props.user.userLogged.userProperties;
   const [modal, SetModal] = useState(false);
   const [modalDelete, SetModalDelete] = useState(false);
   const [showModalUpdate, SetShowModalUpdate] = useState(false);
@@ -73,7 +73,7 @@ const ProductsPage = props => {
     category,
     marks,
     presentation,
-    measurement
+    measurement,
   ] = useCallOtherServices(idSucursal);
   props.ListProduct(listProduct);
   props.AddCategory(category);
@@ -81,20 +81,28 @@ const ProductsPage = props => {
   props.AddPresentation(presentation);
   props.AddMeasurement(measurement);
 
-  const modalDeleteFunc = response => {
+  const modalDeleteFunc = (response) => {
     SetidProducto(response.id_Produccto);
     SetModalDelete(true);
   };
-  const modalUpdatefunc = response => {
+  const modalUpdatefunc = (response) => {
     props.UpdateForm({
       product_name: response.nombre_producto,
-      product_category: props.category.filter(item => item.categoria === response.categoria)[0].id_categoria,
-      product_mark: props.mark.filter(item => item.marca === response.marca)[0].id_marca,
-      product_presentation: props.presentation.filter(item => item.presentacion === response.presentacion)[0].id_presentacion,
-      product_measurement: props.measurement.filter(item => item.medicion === response.medicion)[0].id_medicion,
+      product_category: props.category.filter(
+        (item) => item.categoria === response.categoria
+      )[0].id_categoria,
+      product_mark: props.mark.filter(
+        (item) => item.marca === response.marca
+      )[0].id_marca,
+      product_presentation: props.presentation.filter(
+        (item) => item.presentacion === response.presentacion
+      )[0].id_presentacion,
+      product_measurement: props.measurement.filter(
+        (item) => item.medicion === response.medicion
+      )[0].id_medicion,
       product_creation_user: props.userProperties.id_usuario,
       product_id_sucursal: props.userProperties.id_sucursal,
-      product_id_producto: response.id_Produccto
+      product_id_producto: response.id_Produccto,
     });
     SetformUpdateConfig(
       formConfig(
@@ -142,8 +150,7 @@ const ProductsPage = props => {
               )
             );
           }}
-        >
-        </div>
+        ></div>
         {/** ************************************* Modal Sections********************************************* */}
         <ModalsForProduct
           {...idProducto}
@@ -161,12 +168,12 @@ const ProductsPage = props => {
               options={[
                 {
                   label: "Eliminar",
-                  func: modalDeleteFunc
+                  func: modalDeleteFunc,
                 },
                 {
                   label: "Modificar",
-                  func: modalUpdatefunc
-                }
+                  func: modalUpdatefunc,
+                },
               ]}
             />
           ) : (
@@ -178,16 +185,16 @@ const ProductsPage = props => {
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   user: state.user,
-  userProperties: state.user.userLogged.body.userProperties,
+  userProperties: state.user.userLogged.userProperties,
   listProduct: state.product.listProduct,
   category: state.other.category,
   mark: state.other.mark,
   presentation: state.other.presentation,
-  measurement: state.other.measurement
+  measurement: state.other.measurement,
 });
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       UpdateFormOne,
@@ -199,7 +206,7 @@ const mapDispatchToProps = dispatch =>
       AddMark,
       AddCategory,
       AddPresentation,
-      AddMeasurement
+      AddMeasurement,
     },
     dispatch
   );
