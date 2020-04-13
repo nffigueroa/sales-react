@@ -1,149 +1,152 @@
 export const typeItemTable = {
-  update: 'UPDATE',
-  delete: 'DELETE',
-  text: 'TEXT'
-}
+  update: "UPDATE",
+  delete: "DELETE",
+  text: "TEXT",
+};
 
-export const endPoint = 'http://localhost'
-export const PORT = '3001'
-export const API_VERSION = 'v1'
+export const endPoint = "http://192.168.0.8";
+export const PORT = "3001";
+export const API_VERSION = "v1";
 
 /** Tables Configuration */
 export const tableProductConfiguration = [
-  { label: 'Codigo', bd_name: 'id_Produccto' },
-  { label: 'Producto', bd_name: 'nombre_producto' },
-  { label: 'Categoria', bd_name: 'categoria' },
-  { label: 'Medicion', bd_name: 'medicion' },
-  { label: 'Presentacion', bd_name: 'presentacion' },
-  { label: 'Marca', bd_name: 'marca' }
-]
+  { label: "Codigo", bd_name: "id_Produccto" },
+  { label: "Producto", bd_name: "nombre_producto" },
+  { label: "Categoria", bd_name: "categoria" },
+  { label: "Medicion", bd_name: "medicion" },
+  { label: "Presentacion", bd_name: "presentacion" },
+  { label: "Marca", bd_name: "marca" },
+];
 
 export const tableClientConfiguration = [
-  { label: 'Codigo', bd_name: 'id_cliente' },
-  { label: 'Nombre', bd_name: 'nombre_cliente' },
-  { label: 'Apellido', bd_name: 'apellido_cliente' },
-  { label: 'Cedula', bd_name: 'cedula_cliente' },
-  { label: 'Telefono', bd_name: 'telefono_cliente' },
-  { label: 'Direccion', bd_name: 'direccion_cliente' },
-  { label: 'Email', bd_name: 'mail_cliente' },
-  { label: 'Ciudad', bd_name: 'ciudad' },
-  { label: 'Juridico', bd_name: 'EsJuridico' },
-  { label: 'Ciudad', bd_name: 'ciudad' },
-  { label: 'id_ciudad', bd_name: 'id_ciudad' }
-]
+  { label: "Codigo", bd_name: "id_cliente" },
+  { label: "Nombre", bd_name: "nombre_cliente" },
+  { label: "Apellido", bd_name: "apellido_cliente" },
+  { label: "Cedula", bd_name: "cedula_cliente" },
+  { label: "Telefono", bd_name: "telefono_cliente" },
+  { label: "Direccion", bd_name: "direccion_cliente" },
+  { label: "Email", bd_name: "mail_cliente" },
+  { label: "Ciudad", bd_name: "ciudad" },
+  { label: "Juridico", bd_name: "EsJuridico" },
+  { label: "Ciudad", bd_name: "ciudad" },
+  { label: "id_ciudad", bd_name: "id_ciudad" },
+];
 
 /** Dropdown Configurations */
 
 export const dropDowns = {
   categories: {
-    returnValue: 'id_categoria',
-    displayName: 'categoria'
+    returnValue: "id_categoria",
+    displayName: "categoria",
   },
   marks: {
-    returnValue: 'id_marca',
-    displayName: 'marca'
+    returnValue: "id_marca",
+    displayName: "marca",
   },
   presentations: {
-    returnValue: 'id_presentacion',
-    displayName: 'presentacion'
+    returnValue: "id_presentacion",
+    displayName: "presentacion",
   },
   measurements: {
-    returnValue: 'id_medicion',
-    displayName: 'medicion'
+    returnValue: "id_medicion",
+    displayName: "medicion",
   },
   city: {
-    returnValue: 'id_ciudad',
-    displayName: 'ciudad'
-  }
-}
+    returnValue: "id_ciudad",
+    displayName: "ciudad",
+  },
+};
 
 /* Form Configuration AddProduct */
 const inputTypes = {
-  INPUT: 'input',
-  DROPDOWN: 'dropdown'
-}
+  INPUT: "input",
+  DROPDOWN: "dropdown",
+};
 
-export const formClient = (clientNameValue,
+export const formClient = (
+  clientNameValue,
   clientLastNameValue,
   clientPhoneValue,
   clientIdentValue,
   clientAddressValue,
   clientMailValue,
   citiesListValue,
-  func) => {
+  func
+) => {
   return {
     funcReturnValue: func,
     values: [
       {
-        fieldName: 'client_name',
+        fieldName: "client_name",
         typeInput: inputTypes.INPUT,
         value: clientNameValue,
-        key: '',
+        key: "",
         defaultValue: clientNameValue,
-        id: 'nombre',
-        placeholder: 'Nombre'
+        id: "nombre",
+        placeholder: "Nombre",
       },
       {
-        fieldName: 'last_name',
+        fieldName: "last_name",
         typeInput: inputTypes.INPUT,
         value: clientLastNameValue,
-        key: '',
+        key: "",
         defaultValue: clientLastNameValue,
-        id: 'apellido',
-        placeholder: 'Apellido'
+        id: "apellido",
+        placeholder: "Apellido",
       },
       {
-        fieldName: 'identification',
+        fieldName: "identification",
         typeInput: inputTypes.INPUT,
         value: clientIdentValue,
-        key: '',
+        key: "",
         defaultValue: clientIdentValue,
-        id: 'cedula_cliente',
-        placeholder: 'Cedula'
+        id: "cedula_cliente",
+        placeholder: "Cedula",
       },
       {
-        fieldName: 'phone',
+        fieldName: "phone",
         typeInput: inputTypes.INPUT,
         value: clientPhoneValue,
-        key: '',
+        key: "",
         defaultValue: clientPhoneValue,
-        id: 'celular',
-        placeholder: 'Telefono'
+        id: "celular",
+        placeholder: "Telefono",
       },
       {
-        fieldName: 'address',
+        fieldName: "address",
         typeInput: inputTypes.INPUT,
         value: clientAddressValue,
-        key: '',
+        key: "",
         defaultValue: clientAddressValue,
-        id: 'direccion',
-        placeholder: 'Direccion'
+        id: "direccion",
+        placeholder: "Direccion",
       },
       {
-        fieldName: 'mail',
+        fieldName: "mail",
         typeInput: inputTypes.INPUT,
         value: clientMailValue,
-        key: '',
+        key: "",
         defaultValue: clientMailValue,
-        id: 'correo',
-        placeholder: 'Correo Electronico'
+        id: "correo",
+        placeholder: "Correo Electronico",
       },
       {
-        fieldName: 'city',
+        fieldName: "city",
         typeInput: inputTypes.DROPDOWN,
-        value: '',
-        key: '',
-        defaultValue: '',
-        id: 'ciudad',
-        placeholder: 'Ciudad',
+        value: "",
+        key: "",
+        defaultValue: "",
+        id: "ciudad",
+        placeholder: "Ciudad",
         dropdownList: citiesListValue,
         dropdownReturnValue: dropDowns.city.returnValue,
-        dropdownConfig: dropDowns.city
-      }
-    ]
-  }
-}
-export const formConfig = (productValue,
+        dropdownConfig: dropDowns.city,
+      },
+    ],
+  };
+};
+export const formConfig = (
+  productValue,
   productMarkValue,
   productCategoryValue,
   productPresentationValue,
@@ -153,76 +156,77 @@ export const formConfig = (productValue,
   productMarkList,
   productCategoryList,
   productMeasurementList,
-  productPresentationList) => {
+  productPresentationList
+) => {
   return {
     funcReturnValue: func,
     values: [
       {
-        fieldName: 'id_produccto',
-        typeInput: '',
+        fieldName: "id_produccto",
+        typeInput: "",
         value: productIdValue,
-        key: '',
-        defaultValue: '',
-        id: 'id_produccto',
-        placeholder: ''
+        key: "",
+        defaultValue: "",
+        id: "id_produccto",
+        placeholder: "",
       },
       {
-        fieldName: 'product_name',
+        fieldName: "product_name",
         typeInput: inputTypes.INPUT,
         value: productValue,
-        key: '',
+        key: "",
         defaultValue: productValue,
-        id: 'nombre_producto',
-        placeholder: 'Nombre del producto'
+        id: "nombre_producto",
+        placeholder: "Nombre del producto",
       },
       {
-        fieldName: 'product_mark',
+        fieldName: "product_mark",
         typeInput: inputTypes.DROPDOWN,
         value: productMarkValue,
-        key: '',
+        key: "",
         defaultValue: productMarkValue,
-        id: 'marca',
-        placeholder: 'Marca',
+        id: "marca",
+        placeholder: "Marca",
         dropdownList: productMarkList,
         dropdownReturnValue: dropDowns.marks.returnValue,
-        dropdownConfig: dropDowns.marks
+        dropdownConfig: dropDowns.marks,
       },
       {
-        fieldName: 'product_category',
+        fieldName: "product_category",
         typeInput: inputTypes.DROPDOWN,
         value: productCategoryValue,
-        key: '',
+        key: "",
         defaultValue: productCategoryValue,
-        id: 'categoria',
-        placeholder: 'Categoria',
+        id: "categoria",
+        placeholder: "Categoria",
         dropdownList: productCategoryList,
         dropdownReturnValue: dropDowns.categories.returnValue,
-        dropdownConfig: dropDowns.categories
+        dropdownConfig: dropDowns.categories,
       },
       {
-        fieldName: 'product_presentation',
+        fieldName: "product_presentation",
         typeInput: inputTypes.DROPDOWN,
         value: productPresentationValue,
-        key: '',
+        key: "",
         defaultValue: productPresentationValue,
-        id: 'presentacion',
-        placeholder: 'Presentación',
+        id: "presentacion",
+        placeholder: "Presentación",
         dropdownList: productPresentationList,
         dropdownReturnValue: dropDowns.presentations.returnValue,
-        dropdownConfig: dropDowns.presentations
+        dropdownConfig: dropDowns.presentations,
       },
       {
-        fieldName: 'product_measurement',
+        fieldName: "product_measurement",
         typeInput: inputTypes.DROPDOWN,
         value: productMeasurementValue,
-        key: '',
+        key: "",
         defaultValue: productMeasurementValue,
-        id: 'medicion',
-        placeholder: 'Medición',
+        id: "medicion",
+        placeholder: "Medición",
         dropdownList: productMeasurementList,
         dropdownReturnValue: dropDowns.measurements.returnValue,
-        dropdownConfig: dropDowns.measurements
-      }
-    ]
-  }
-}
+        dropdownConfig: dropDowns.measurements,
+      },
+    ],
+  };
+};
