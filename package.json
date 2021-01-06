@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@material/react-material-icon": "^0.15.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "bootstrap-icons": "^1.0.0-alpha2",
     "node-sass": "^4.12.0",
